@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mono.Counters", "Mono.Counters\Mono.Counters.csproj", "{FAD0C021-273A-4177-9B4A-D8D15C4F4418}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{16BA0D96-099B-430E-893D-D4BB4EA87279}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAD0C021-273A-4177-9B4A-D8D15C4F4418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAD0C021-273A-4177-9B4A-D8D15C4F4418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAD0C021-273A-4177-9B4A-D8D15C4F4418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAD0C021-273A-4177-9B4A-D8D15C4F4418}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16BA0D96-099B-430E-893D-D4BB4EA87279}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16BA0D96-099B-430E-893D-D4BB4EA87279}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16BA0D96-099B-430E-893D-D4BB4EA87279}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16BA0D96-099B-430E-893D-D4BB4EA87279}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
