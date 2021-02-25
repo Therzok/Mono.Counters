@@ -45,6 +45,22 @@ namespace Tests
             Assert.DoesNotContain(visitor, x => x.Name == "User Time");
         }
 
+        [Fact]
+        public void TimeCountersReportTimeSpan()
+        {
+            var visitor = new TimeUnitVisitor();
+            counters.Dump(visitor);
+
+            Assert.NotEmpty(visitor);
+            Assert.All(visitor, x => Assert.IsType<TimeSpan>(x.Value));
+        }
+
+        class TimeUnitVisitor : GatheringVisitor
+        {
+            protected override bool Filter(NativeCounter c) => c.Unit == CounterUnit.Time;
+        }
+
+
         class CountUnitFilteringVisitor : GatheringVisitor
         {
             protected override bool Filter(NativeCounter c) => c.Unit == CounterUnit.Count;
