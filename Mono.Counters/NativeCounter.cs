@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.InteropServices;
 
 namespace Mono.Counters
@@ -34,9 +34,21 @@ namespace Mono.Counters
                     case CounterType.IntPtr:
                         return MemoryMarshal.Read<IntPtr>(array);
                     case CounterType.Long:
-                        return MemoryMarshal.Read<long>(array);
+                        long value = MemoryMarshal.Read<long>(array);
+                        if (Unit.Equals(CounterUnit.Time))
+                            return TimeSpan.FromTicks(value / 10000);
+                        return value;
                     case CounterType.ULong:
-                        return MemoryMarshal.Read<ulong>(array);
+                        ulong value2 = MemoryMarshal.Read<ulong>(array);
+                        if (Unit.Equals(CounterUnit.Time))
+                        {
+                            value2 /= 10000;
+                            if (value2 < long.MaxValue)
+                                return TimeSpan.FromTicks((long)value2);
+                            else
+                                return value2;
+                        }
+                        return value2;
                     case CounterType.Double:
                         return MemoryMarshal.Read<double>(array);
                     case CounterType.String:
