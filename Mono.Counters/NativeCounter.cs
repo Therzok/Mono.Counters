@@ -35,18 +35,15 @@ namespace Mono.Counters
                         return MemoryMarshal.Read<IntPtr>(array);
                     case CounterType.Long:
                         long value = MemoryMarshal.Read<long>(array);
-                        if (Unit.Equals(CounterUnit.Time))
-                            return TimeSpan.FromTicks(value / 10000);
+                        if (Unit == CounterUnit.Time)
+                            return TimeSpan.FromTicks(value / (10 * 1000)); // Mono uses 100ns as the unit
                         return value;
                     case CounterType.ULong:
                         ulong value2 = MemoryMarshal.Read<ulong>(array);
-                        if (Unit.Equals(CounterUnit.Time))
+                        if (Unit == CounterUnit.Time)
                         {
-                            value2 /= 10000;
-                            if (value2 < long.MaxValue)
-                                return TimeSpan.FromTicks((long)value2);
-                            else
-                                return value2;
+                            value2 /= 10 * 1000; // Mono uses 100ns as the unit
+                            return TimeSpan.FromTicks((long)value2);
                         }
                         return value2;
                     case CounterType.Double:
