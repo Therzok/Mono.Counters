@@ -1,0 +1,182 @@
+﻿=============
+MONO COUNTERS
+=============
+
+Collection max time: 00:00:00.0020529 [2.0529ms]
+Minor fragment clear: 00:00:00.0000294 [0.0294ms]
+Minor pinning: 00:00:00.0008567 [0.8567ms]
+Minor scan remembered set: 00:00:00.0016738 [1.6738ms]
+Minor scan major blocks: 00:00:00.0000481 [0.0481ms]
+Minor scan los: 00:00:00.0000280 [0.028ms]
+Minor scan pinned: 00:00:00.0000304 [0.0304ms]
+Minor scan roots: 00:00:00.0022750 [2.275ms]
+Minor fragment creation: 00:00:00.0001180 [0.118ms]
+Major fragment clear: 00:00:00.0000306 [0.0306ms]
+Major pinning: 00:00:00.0024653 [2.4653ms]
+Major scan pinned: 00:00:00.0000276 [0.0276ms]
+Major scan roots: 00:00:00.0059329 [5.9329ms]
+Major scan mod union blocks: 00:00:00 [0ms]
+Major scan mod union los: 00:00:00 [0ms]
+Major finish gray stack: 00:00:00.0002280 [0.228ms]
+Major free big objects: 00:00:00.0000136 [0.0136ms]
+Major LOS sweep: 00:00:00.0946759 [94.6759ms]
+Major sweep: 00:00:00.0006960 [0.696ms]
+Major fragment creation: 00:00:00.0000758 [0.0758ms]
+Number of pinned objects: 936
+Coop Reset Blocking: 419
+Coop Try Blocking: 0
+Coop Do Blocking: 625
+Coop Do Polling: 0
+Coop Save Count: 639
+World stop: 00:00:00.0001077 [0.1077ms]
+World restart: 00:00:00.0000382 [0.0382ms]
+# major blocks allocated: 64
+# major blocks freed: 8
+# major blocks lazy swept: 0
+# major blocks freed ideally: 0
+# major blocks freed less ideally: 8
+# major blocks freed individually: 0
+# major blocks allocated less ideally: 0
+# workers finished: 234
+Memgov alloc: 34504704
+Memgov max alloc: 40271872
+Minor GC collections: 117
+Major GC collections: 117
+Minor GC time: 00:00:00.0054337 [5.4337ms]
+Major GC time: 00:00:00.1063536 [106.3536ms]
+Major GC time concurrent: 00:00:00.0183942 [18.3942ms]
+
+=============
+MONO ORIGINAL
+=============
+
+
+GC statistics
+Collection max time                 : 2.05 ms
+Minor fragment clear                : 0.03 ms
+Minor pinning                       : 0.86 ms
+Minor scan remembered set           : 1.67 ms
+Minor scan major blocks             : 0.05 ms
+Minor scan los                      : 0.03 ms
+Minor scan pinned                   : 0.03 ms
+Minor scan roots                    : 2.27 ms
+Minor fragment creation             : 0.12 ms
+Major fragment clear                : 0.03 ms
+Major pinning                       : 2.47 ms
+Major scan pinned                   : 0.03 ms
+Major scan roots                    : 5.93 ms
+Major scan mod union blocks         : 0.00 ms
+Major scan mod union los            : 0.00 ms
+Major finish gray stack             : 0.23 ms
+Major free big objects              : 0.01 ms
+Major LOS sweep                     : 94.68 ms
+Major sweep                         : 0.70 ms
+Major fragment creation             : 0.08 ms
+Number of pinned objects            : 936
+Coop Reset Blocking                 : 607
+Coop Try Blocking                   : 0
+Coop Do Blocking                    : 1013
+Coop Do Polling                     : 0
+Coop Save Count                     : 1013
+World stop                          : 0.11 ms
+World restart                       : 0.04 ms
+# major blocks allocated            : 64
+# major blocks freed                : 8
+# major blocks lazy swept           : 0
+# major blocks freed ideally        : 0
+# major blocks freed less ideally   : 8
+# major blocks freed individually   : 0
+# major blocks allocated less ideally: 0
+# workers finished                  : 234
+Memgov alloc                        : 34504704
+Memgov max alloc                    : 40271872
+Minor GC collections                : 117
+Major GC collections                : 117
+Minor GC time                       : 5.43 ms
+Major GC time                       : 106.35 ms
+Major GC time concurrent            : 18.39 ms
+
+================
+COUNTER METADATA
+================
+
+        Gc      ULong       Time Collection max time
+        Gc      ULong       Time Minor fragment clear
+        Gc      ULong       Time Minor pinning
+        Gc      ULong       Time Minor scan remembered set
+        Gc      ULong       Time Minor scan major blocks
+        Gc      ULong       Time Minor scan los
+        Gc      ULong       Time Minor scan pinned
+        Gc      ULong       Time Minor scan roots
+        Gc      ULong       Time Minor fragment creation
+        Gc      ULong       Time Major fragment clear
+        Gc      ULong       Time Major pinning
+        Gc      ULong       Time Major scan pinned
+        Gc      ULong       Time Major scan roots
+        Gc      ULong       Time Major scan mod union blocks
+        Gc      ULong       Time Major scan mod union los
+        Gc      ULong       Time Major finish gray stack
+        Gc      ULong       Time Major free big objects
+        Gc      ULong       Time Major LOS sweep
+        Gc      ULong       Time Major sweep
+        Gc      ULong       Time Major fragment creation
+        Gc      ULong        Raw Number of pinned objects
+        Gc      Int32        Raw Coop Reset Blocking
+        Gc      Int32        Raw Coop Try Blocking
+        Gc      Int32        Raw Coop Do Blocking
+        Gc      Int32        Raw Coop Do Polling
+        Gc      Int32        Raw Coop Save Count
+        Gc      ULong       Time World stop
+        Gc      ULong       Time World restart
+        Gc      ULong        Raw # major blocks allocated
+        Gc      ULong        Raw # major blocks freed
+        Gc      ULong        Raw # major blocks lazy swept
+        Gc      ULong        Raw # major blocks freed ideally
+        Gc      ULong        Raw # major blocks freed less ideally
+        Gc      ULong        Raw # major blocks freed individually
+        Gc      ULong        Raw # major blocks allocated less ideally
+        Gc      ULong        Raw # workers finished
+        Gc     IntPtr      Bytes Memgov alloc
+        Gc     IntPtr      Bytes Memgov max alloc
+        Gc      Int32        Raw Minor GC collections
+        Gc      Int32        Raw Major GC collections
+        Gc      ULong       Time Minor GC time
+        Gc       Long       Time Major GC time
+        Gc       Long       Time Major GC time concurrent
+
+=============
+MONO SHUTDOWN
+=============
+
+Printing runtime stats at shutdown
+Mono Jit statistics
+Max code size ratio:    16.71 (Task::FromResult))
+Biggest method:         4272 (NativeCounter::GetValue))
+Delegates created:      0
+Initialized classes:    1296
+Used classes:           225
+Generic vtables:        101
+Methods:                2303
+Static data size:       1982
+VTable data size:       79208
+Mscorlib mempool size:  507992
+
+Initialized classes:    313
+Inflated types:         3400
+Generics virtual invokes: 0
+Sharable generic methods: 0
+Unsharable generic methods: 77
+Shared generic methods: 0
+Shared vtype generic methods: 0
+IMT tables size:        20216
+IMT number of tables:   133
+IMT number of methods:  34
+IMT used slots:         18
+IMT colliding slots:    8
+IMT max collisions:     10
+IMT methods at max col: 10
+IMT trampolines size:   366
+JIT info table inserts: 337
+JIT info table removes: 0
+JIT info table lookups: 646
+

@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 
 namespace Mono.Counters
@@ -33,19 +34,18 @@ namespace Mono.Counters
                         return MemoryMarshal.Read<uint>(array);
                     case CounterType.IntPtr:
                         return MemoryMarshal.Read<IntPtr>(array);
+
                     case CounterType.Long:
                         long value = MemoryMarshal.Read<long>(array);
-                        if (Unit == CounterUnit.Time)
-                            return TimeSpan.FromTicks(value / (10 * 1000)); // Mono uses 100ns as the unit
-                        return value;
+
+                        return GetTimeOrValue(value);
+
                     case CounterType.ULong:
-                        ulong value2 = MemoryMarshal.Read<ulong>(array);
-                        if (Unit == CounterUnit.Time)
-                        {
-                            value2 /= 10 * 1000; // Mono uses 100ns as the unit
-                            return TimeSpan.FromTicks((long)value2);
-                        }
-                        return value2;
+                        ulong uvalue = MemoryMarshal.Read<ulong>(array);
+
+                        // There is a loss of precision here here, as in, values won't go above 10,675,199 days.
+                        return GetTimeOrValue((long)Math.Min(uvalue, long.MaxValue));
+
                     case CounterType.Double:
                         return MemoryMarshal.Read<double>(array);
                     case CounterType.String:
@@ -58,11 +58,18 @@ namespace Mono.Counters
                         }
                     case CounterType.TimeInterval:
                         var ts = MemoryMarshal.Read<long>(array);
-                        return TimeSpan.FromMilliseconds(ts / 1000);
+                        return TimeSpan.FromMilliseconds((double)ts / 1000);
                 }
             }
 
             throw new InvalidOperationException($"Buffer {array.Length} too small");
+        }
+
+        object GetTimeOrValue(long value)
+        {
+            return Unit == CounterUnit.Time
+                ? (object)TimeSpan.FromTicks(value)
+                : value;
         }
     }
 }
